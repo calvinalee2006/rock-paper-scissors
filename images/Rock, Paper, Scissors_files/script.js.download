@@ -17,17 +17,15 @@ const showHumanChoice = document.getElementById('human-select');
 const showComputerChoice = document.getElementById('computer-select');
 const showGameResult = document.getElementById('game-result');
 const possibleChoices = document.querySelectorAll('button');
-const showPlayerWins = document.getElementById('humanWins');
-const showPlayerLoss = document.getElementById('humanLoss');
-const showPlayerTies = document.getElementById('humanTies');
+const showplayerwins = document.getElementById('wins');
+const showplayerLoss = document.getElementById('loss');
 
 let humanChoice;
 let computerChoice;
 let result;
+let wins;
+let loss;
 
-let playerWins = 0;
-let playerLoss = 0;
-let playerTies = 0;
 
 
 possibleChoices.forEach(gameChoice => gameChoice.addEventListener('click', (e) => {
@@ -40,7 +38,6 @@ possibleChoices.forEach(gameChoice => gameChoice.addEventListener('click', (e) =
 function generateComputerChoice() {
     const randomNumber = Math.floor(Math.random() * 3) + 1
     console.log(randomNumber);
-
     if (randomNumber === 1) {
         computerChoice = 'rock'
         document.getElementById('demo2').innerHTML = '<img src=images/rock.jpg>';
@@ -60,44 +57,32 @@ function generateComputerChoice() {
 function gameResult() {
     if (humanChoice === computerChoice) {
         result = "A Tie";
-        playerTies++
         document.getElementById('result').innerHTML = '<img src = images/tie.gif>';
     }
     if (humanChoice === 'rock' && computerChoice === "paper") {
-        playerLoss++;
         result = 'You lose';
         document.getElementById('result').innerHTML = '<img src= images/youLOSE.gif>';
     }
     if (humanChoice === 'rock' && computerChoice === 'scissors') {
-        playerWins++;
         result = 'You Win';
         document.getElementById('result').innerHTML = '<img src= images/TheRockWins.gif>';
     }
     if (humanChoice === 'paper' && computerChoice === 'rock') {
-        playerWins++;
         result = 'You win';
         document.getElementById('result').innerHTML = '<img src= images/makeItRain.gif>';
     }
     if (humanChoice === 'paper' && computerChoice === 'scissors') {
-        playerLoss++;
         result = 'You lose';
         document.getElementById('result').innerHTML = '<img src= images/youLOSE.gif>';
     }
     if (humanChoice === 'scissors' && computerChoice === 'rock') {
-        playerLoss++;
         result = 'You lose';
         document.getElementById('result').innerHTML = '<img src= images/youLOSE.gif>';
     }
     if (humanChoice === 'scissors' && computerChoice === 'paper') {
-        playerWin++;
         result = 'You win';
         document.getElementById('result').innerHTML = '<img src= images/makeItRain.gif>';
     }
     showGameResult.innerHTML = `The victor goes to: ${result}`;
-    showPlayerWins.innerHTML = `Wins: ${playerWins}`
-    showPlayerLoss.innerHTML = `Loss: ${playerLoss}`
-    showPlayerTies.innerHTML = `Ties: ${playerTies}`
-
 }
-
 
