@@ -96,7 +96,7 @@ function gameResult() {
     showGameResult.innerHTML = `The victor goes to: ${result}`;
     showPlayerWins.innerHTML = `Wins: ${playerWins}`
     showPlayerLoss.innerHTML = `Loss: ${playerLoss}`
-    showPlayerTies.innerHTML = `Ties: ${playerTies}`
+    
 
 }
 
