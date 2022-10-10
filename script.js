@@ -1,8 +1,6 @@
-//When uses presses button rock shows, rock shows, computer choice shows. 
 const selectRock = document.getElementById('rock').addEventListener('click', (e) => {
     document.getElementById('demo1').innerHTML = '<img src=images/rock.jpg>';
-    //The computer randomly chooses it selection choice. 
-    //Display choice to human user. 
+    
 });
 
 const selectPaper = document.getElementById('paper').addEventListener('click', (e) => {
